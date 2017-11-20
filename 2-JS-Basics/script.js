@@ -38,24 +38,50 @@
 
 
 // Lecture: operators
-var now = 2016;
-var birthYear = now - 26;
-birthYear = now - 26*2; // operator precedence
-
-
-console.log(birthYear);
-
-var ageJohn = 30;
-var ageMark = 30;
-ageJohn = ageMark = (3 + 5) * 4 - 6; // = = operate from right to left (equal case)
-
-ageJohn++;
-ageMark *= 2;
-
-console.log(ageJohn + ' ' + ageMark);
-
-
+//var now = 2016;
+//var birthYear = now - 26;
+//birthYear = now - 26*2; // operator precedence
+//
+//
+//console.log(birthYear);
+//
+//var ageJohn = 30;
+//var ageMark = 30;
+//ageJohn = ageMark = (3 + 5) * 4 - 6; // = = operate from right to left (equal case)
+//
+//ageJohn++;
+//ageMark *= 2;
+//
+//console.log(ageJohn + ' ' + ageMark);
 
 
 
+// Lecture: if/else statement
+var name = 'John';
+var age = 26;
+var isMarried = 'no';
+
+if (isMarried === 'yes') {
+    console.log(name + ' is married.');
+} else {
+    console.log(name + ' is not married.');
+}
+
+isMarried = false;
+
+if (isMarried) {
+    console.log(name + ' is married.');
+} else {
+    console.log(name + ' is not married.');
+}
+
+if (22 == '22') { // will convert data type
+    console.log('equal');
+}
+
+if (22 === '22') { // will not convert data type; should use this because === is safer
+    console.log('equal');
+} else {
+    console.log('not equal');
+}
 
