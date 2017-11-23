@@ -87,31 +87,55 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: boolean logic and switch
-var age = 25;
-if (age < 20) {
-    console.log('teenager');
-} else if (age >= 20 && age < 30) {
-    console.log('young man');
+//var age = 25;
+//if (age < 20) {
+//    console.log('teenager');
+//} else if (age >= 20 && age < 30) {
+//    console.log('young man');
+//} else {
+//    console.log('man');
+//}
+//
+//
+//var job = 'teacher';
+//switch (job) {
+//    case 'teacher':
+//        console.log('John teaches kids');
+//        break; // DO NOT forget this!!!!
+//    case 'driver':
+//        console.log('John drives a cab.');
+//        break;
+//    case 'cop':
+//        console.log('John helps fight crime.');
+//        break;
+//    default:
+//        console.log('John does something else.');
+//        // no break here
+//}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// CODING PROBLEM
+var heightJohn = 172;
+var heightMike = 165;
+var ageJohn = 26;
+var ageMike = 29;
+
+var scoreJohn = heightJohn + 5 * ageJohn;
+var scoreMike = heightMike + 5 * ageMike;
+
+if (scoreJohn > scoreMike) {
+    console.log('John wins with ' + scoreJohn + ' points.');
+} else if (scoreJohn < scoreMike) {
+    console.log('Mike wins with ' + scoreMike + ' points.');
 } else {
-    console.log('man');
+    console.log('There is a draw.');
 }
 
 
-var job = 'teacher';
-switch (job) {
-    case 'teacher':
-        console.log('John teaches kids');
-        break; // DO NOT forget this!!!!
-    case 'driver':
-        console.log('John drives a cab.');
-        break;
-    case 'cop':
-        console.log('John helps fight crime.');
-        break;
-    default:
-        console.log('John does something else.');
-        // no break here
-}
+
+
+
+
 
 
 
