@@ -13,7 +13,7 @@
 //console.log(fullAge);
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: variables 2
 //var name = 'John';
 //var age = 26;
@@ -36,7 +36,7 @@
 //
 //alert(name + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried + '.');
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: operators
 //var now = 2016;
 //var birthYear = now - 26;
@@ -55,33 +55,51 @@
 //console.log(ageJohn + ' ' + ageMark);
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: if/else statement
-var name = 'John';
-var age = 26;
-var isMarried = 'no';
+//var name = 'John';
+//var age = 26;
+//var isMarried = 'no';
+//
+//if (isMarried === 'yes') {
+//    console.log(name + ' is married.');
+//} else {
+//    console.log(name + ' is not married.');
+//}
+//
+//isMarried = false;
+//
+//if (isMarried) {
+//    console.log(name + ' is married.');
+//} else {
+//    console.log(name + ' is not married.');
+//}
+//
+//if (22 == '22') { // will convert data type
+//    console.log('equal');
+//}
+//
+//if (22 === '22') { // will not convert data type; should use this because === is safer
+//    console.log('equal');
+//} else {
+//    console.log('not equal');
+//}
 
-if (isMarried === 'yes') {
-    console.log(name + ' is married.');
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: boolean logic and switch
+var age = 25;
+if (age < 20) {
+    console.log('teenager');
+} else if (age >= 20 && age < 30) {
+    console.log('young man');
 } else {
-    console.log(name + ' is not married.');
+    console.log('man');
 }
 
-isMarried = false;
 
-if (isMarried) {
-    console.log(name + ' is married.');
-} else {
-    console.log(name + ' is not married.');
-}
 
-if (22 == '22') { // will convert data type
-    console.log('equal');
-}
 
-if (22 === '22') { // will not convert data type; should use this because === is safer
-    console.log('equal');
-} else {
-    console.log('not equal');
-}
+
+
+
 
