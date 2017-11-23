@@ -97,7 +97,21 @@ if (age < 20) {
 }
 
 
-
+var job = 'teacher';
+switch (job) {
+    case 'teacher':
+        console.log('John teaches kids');
+        break; // DO NOT forget this!!!!
+    case 'driver':
+        console.log('John drives a cab.');
+        break;
+    case 'cop':
+        console.log('John helps fight crime.');
+        break;
+    default:
+        console.log('John does something else.');
+        // no break here
+}
 
 
 
