@@ -115,35 +115,63 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // CODING PROBLEM
-var heightJohn = 172;
-var heightMike = 165;
-var ageJohn = 26;
-var ageMike = 29;
-
-var scoreJohn = heightJohn + 5 * ageJohn;
-var scoreMike = heightMike + 5 * ageMike;
-
-//if (scoreJohn > scoreMike) {
+//var heightJohn = 172;
+//var heightMike = 165;
+//var ageJohn = 26;
+//var ageMike = 29;
+//
+//var scoreJohn = heightJohn + 5 * ageJohn;
+//var scoreMike = heightMike + 5 * ageMike;
+//
+////if (scoreJohn > scoreMike) {
+////    console.log('John wins with ' + scoreJohn + ' points.');
+////} else if (scoreJohn < scoreMike) {
+////    console.log('Mike wins with ' + scoreMike + ' points.');
+////} else { // scoreJohn === scoreMike
+////    console.log('There is a draw.');
+////}
+//
+//var heightMary = 158;
+//var ageMary = 31;
+//var scoreMary = heightMary + 5 * ageMary;
+//
+//if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 //    console.log('John wins with ' + scoreJohn + ' points.');
-//} else if (scoreJohn < scoreMike) {
+//} else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
 //    console.log('Mike wins with ' + scoreMike + ' points.');
-//} else { // scoreJohn === scoreMike
-//    console.log('There is a draw.');
+//} else if (scoreMary > scoreJohn && scoreMary > scoreJohn) {
+//    console.log('Mary wins with ' + scoreMary + ' points.');
+//} else {
+//    console.log('It\'s a draw.');
 //}
 
-var heightMary = 158;
-var ageMary = 31;
-var scoreMary = heightMary + 5 * ageMary;
 
-if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
-    console.log('John wins with ' + scoreJohn + ' points.');
-} else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
-    console.log('Mike wins with ' + scoreMike + ' points.');
-} else if (scoreMary > scoreJohn && scoreMary > scoreJohn) {
-    console.log('Mary wins with ' + scoreMary + ' points.');
-} else {
-    console.log('It\'s a draw.');
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Functions
+function calculateAge(yearOfBirth) {
+    var age = 2016 - yearOfBirth;
+    return age;
 }
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1969);
+var ageMary = calculateAge(1948);
+console.log(ageJohn + ' ' + ageMike + ' ' + ageMary);
+
+
+function yearsUntilRetirement(name, yearOfBirth) {
+    var age = calculateAge(yearOfBirth);
+    var retirement = 65 - age;
+    if (retirement >= 0) {
+        console.log(name + ' retires in ' + retirement + ' years.');
+    } else {
+        console.log(name + ' is already retired.');
+    }
+}
+
+yearsUntilRetirement('John' , 1990);
+yearsUntilRetirement('Mike' , 1969);
+yearsUntilRetirement('Mary' , 1948);
 
 
 
