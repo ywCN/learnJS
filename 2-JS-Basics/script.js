@@ -257,26 +257,43 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Objects and methods
-var john = {
+//var john = { // version 1
+//    name: 'John',
+//    lastName: 'Smith',
+//    yearOfBirth: 1990,
+//    job: 'teacher',
+//    isMarried: false,
+//    family: ['Jane', 'Mark', 'Bob'],
+//    calculateAge: function() { // function expression
+//        // it's also a method
+//        return 2017 - this.yearOfBirth;
+//    }
+//};
+//
+//
+//
+//console.log(john);
+//console.log(john.family);
+//console.log(john.family[0]);
+//
+//console.log(john.calculateAge());
+//
+//var age = john.calculateAge();
+//john.age = age;
+//console.log(john);
+
+var john = { // version 2
     name: 'John',
     lastName: 'Smith',
     yearOfBirth: 1990,
     job: 'teacher',
     isMarried: false,
     family: ['Jane', 'Mark', 'Bob'],
-    calculateAge: function(yearOfBirth) { // function expression
+    calculateAge: function() { // function expression
         // it's also a method
-        return 2017 - yearOfBirth;
+        return 2017 - this.yearOfBirth;
     }
 };
-
-console.log(john);
-console.log(john.family);
-console.log(john.family[0]);
-
-console.log(john.calculateAge(1970));
-
-
 
 
 
