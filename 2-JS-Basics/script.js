@@ -226,7 +226,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Objects
 
-var john = {
+var john = { // first way to define Object
     name: 'John',
     lastName: 'Smith',
     yearOfBirth: 1990,
@@ -246,7 +246,13 @@ john.lastName = 'Miller';
 john['job'] = 'developer';
 console.log(john);
 
+var jane = new Object(); // second way to define Object
+jane.name = 'Jane';
+jane.lastName = 'Smith';
+jane['yearOfBirth'] = 1969;
+jane['isMarried'] = true;
 
+console.log(jane);
 
 
 
