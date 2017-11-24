@@ -302,25 +302,49 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Loops
 
-for (var i = 0; i < 10; i++) {
-    console.log(i);
+//for (var i = 0; i < 10; i++) {
+//    console.log(i);
+//}
+
+//var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+////for (var i = 0; i < names.length; i++) {
+////    console.log(names[i]);
+////}
+////for (var i = names.length - 1; i >= 0; i--) {
+////    console.log(names[i]);
+////}
+//
+//var i = 0;
+//while (i < names.length) {
+//    console.log(names[i]);
+//    i++;
+//}
+//for (var i = 0; i < 6; i++) {
+//    if (i === 1) continue;
+//    if (i === 5) break;
+//    console.log(i);
+//}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// CODING PROBLEM
+var ages = [1999, 2001, 1970, 2010];
+var emptyAge = [];
+for (var i = 0; i < ages.length; i++) {
+    emptyAge[i] = ages[i];
+}
+console.log(emptyAge);
+
+function getAge(yearOfBirth) {
+    return 2017 - yearOfBirth;
 }
 
-var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
-for (var i = 0; i < names.length; i++) {
-    console.log(names[i]);
+for (var i = 0; i < ages.length; i++) {
+    if (getAge(ages[i]) < 18) {
+        console.log(false);
+    } else {
+        console.log(true);
+    }
 }
-for (var i = names.length - 1; i >= 0; i--) {
-    console.log(names[i]);
-}
-
-
-
-
-
-
-
-
 
 
 
