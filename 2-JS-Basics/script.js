@@ -242,7 +242,9 @@ var xyz = 'job';
 console.log(john[xyz]);
 
 
-
+john.lastName = 'Miller';
+john['job'] = 'developer';
+console.log(john);
 
 
 
