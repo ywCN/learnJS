@@ -265,15 +265,16 @@ var john = {
     isMarried: false,
     family: ['Jane', 'Mark', 'Bob'],
     calculateAge: function(yearOfBirth) { // function expression
+        // it's also a method
         return 2017 - yearOfBirth;
     }
 };
 
 console.log(john);
+console.log(john.family);
+console.log(john.family[0]);
 
-
-
-
+console.log(john.calculateAge(1970));
 
 
 
