@@ -346,8 +346,19 @@ for (var i = 0; i < ages.length; i++) {
     }
 }
 
-
-
+var emptyFullAge = [];
+function printFullAge(ages, emptyFullAge) {
+    for (var i = 0; i < ages.length; i++) {
+        if (getAge(ages[i]) < 18) {
+            emptyFullAge[i] = false;
+        } else {
+            emptyFullAge[i] = true;
+        }
+    }
+    return emptyFullAge;
+}
+printFullAge(ages, emptyFullAge);
+console.log(emptyFullAge);
 
 
 
