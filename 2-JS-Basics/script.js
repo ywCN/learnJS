@@ -327,38 +327,41 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // CODING PROBLEM
-var ages = [1999, 2001, 1970, 2010];
-var emptyAge = [];
-for (var i = 0; i < ages.length; i++) {
-    emptyAge[i] = ages[i];
+var years = [1999, 2001, 1970, 2010];
+var ages = [];
+for (var i = 0; i < years.length; i++) {
+    ages[i] = 2017 - years[i];
 }
-console.log(emptyAge);
-
-function getAge(yearOfBirth) {
-    return 2017 - yearOfBirth;
-}
+console.log(ages);
 
 for (var i = 0; i < ages.length; i++) {
-    if (getAge(ages[i]) < 18) {
-        console.log(false);
+    if (ages[i] < 18) {
+        console.log('Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is NOT of full age.');
     } else {
-        console.log(true);
+        console.log('Person ' + (i + 1) + ' is ' + ages[i] + ' years old, and is of full age.');    
     }
 }
 
-var emptyFullAge = [];
-function printFullAge(ages, emptyFullAge) {
+function printFullAge(years) {
+    var ages = [];
+    for (var i = 0; i < years.length; i++) {
+        ages[i] = 2017 - years[i];
+    }
+    var fullAges = [];
     for (var i = 0; i < ages.length; i++) {
-        if (getAge(ages[i]) < 18) {
-            emptyFullAge[i] = false;
+        if (ages[i] < 18) {
+            fullAges.push(false);
         } else {
-            emptyFullAge[i] = true;
+            fullAges.push(true);
         }
     }
-    return emptyFullAge;
+    return fullAges;
 }
-printFullAge(ages, emptyFullAge);
-console.log(emptyFullAge);
+
+var full_1 = printFullAge(years);
+var full_2 = printFullAge([2012, 1980, 1999]);
+
+
 
 
 
