@@ -148,30 +148,84 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Functions
-function calculateAge(yearOfBirth) {
-    var age = 2016 - yearOfBirth;
-    return age;
+//function calculateAge(yearOfBirth) {
+//    var age = 2016 - yearOfBirth;
+//    return age;
+//}
+//
+//var ageJohn = calculateAge(1990);
+//var ageMike = calculateAge(1969);
+//var ageMary = calculateAge(1948);
+//console.log(ageJohn + ' ' + ageMike + ' ' + ageMary);
+//
+//
+//function yearsUntilRetirement(name, yearOfBirth) {
+//    var age = calculateAge(yearOfBirth);
+//    var retirement = 65 - age;
+//    if (retirement >= 0) {
+//        console.log(name + ' retires in ' + retirement + ' years.');
+//    } else {
+//        console.log(name + ' is already retired.');
+//    }
+//}
+//
+//yearsUntilRetirement('John' , 1990);
+//yearsUntilRetirement('Mike' , 1969);
+//yearsUntilRetirement('Mary' , 1948);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Statements and expressions
+//function someFunction(param) {
+//    // This is a function statment.
+//}
+//
+//var someFunction = function(param) {
+//    // This is a function expression.
+//}
+//
+//// Expressions
+//3 + 4;
+//var x = 3;
+//
+//// statements
+//if (x === 5) {
+//    // do something
+//}
+
+// An expression is to produce some values.
+// A statement is to perform some actions.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Arrays
+var names = ['John', 'Jane', 'Mark'];
+var years = new Array(1990, 1969, 1948); // another way to init an Array
+
+console.log(names[0]);
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+console.log(john);
+
+john.push('blue');
+console.log(john);
+
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+console.log(john);
+
+john.shift();
+console.log(john);
+
+if (john.indexOf('teacher') !== -1) {
+    console.log('John is a teacher');
 }
 
-var ageJohn = calculateAge(1990);
-var ageMike = calculateAge(1969);
-var ageMary = calculateAge(1948);
-console.log(ageJohn + ' ' + ageMike + ' ' + ageMary);
 
 
-function yearsUntilRetirement(name, yearOfBirth) {
-    var age = calculateAge(yearOfBirth);
-    var retirement = 65 - age;
-    if (retirement >= 0) {
-        console.log(name + ' retires in ' + retirement + ' years.');
-    } else {
-        console.log(name + ' is already retired.');
-    }
-}
 
-yearsUntilRetirement('John' , 1990);
-yearsUntilRetirement('Mike' , 1969);
-yearsUntilRetirement('Mary' , 1948);
 
 
 
