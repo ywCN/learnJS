@@ -197,31 +197,50 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Arrays
-var names = ['John', 'Jane', 'Mark'];
-var years = new Array(1990, 1969, 1948); // another way to init an Array
+//var names = ['John', 'Jane', 'Mark'];
+//var years = new Array(1990, 1969, 1948); // another way to init an Array
+//
+//console.log(names[0]);
+//console.log(names);
+//
+//var john = ['John', 'Smith', 1990, 'teacher', false];
+//
+//console.log(john);
+//
+//john.push('blue');
+//console.log(john);
+//
+//john.unshift('Mr.');
+//console.log(john);
+//
+//john.pop();
+//console.log(john);
+//
+//john.shift();
+//console.log(john);
+//
+//if (john.indexOf('teacher') !== -1) {
+//    console.log('John is a teacher');
+//}
 
-console.log(names[0]);
-console.log(names);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Objects
 
-var john = ['John', 'Smith', 1990, 'teacher', false];
+var john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBirth: 1990,
+    job: 'teacher',
+    isMarried: false
+};
 
 console.log(john);
+console.log(john.lastName);
+console.log(john['lastName']);
 
-john.push('blue');
-console.log(john);
+var xyz = 'job';
+console.log(john[xyz]);
 
-john.unshift('Mr.');
-console.log(john);
-
-john.pop();
-console.log(john);
-
-john.shift();
-console.log(john);
-
-if (john.indexOf('teacher') !== -1) {
-    console.log('John is a teacher');
-}
 
 
 
