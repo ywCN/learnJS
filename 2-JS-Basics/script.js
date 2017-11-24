@@ -281,19 +281,32 @@
 //var age = john.calculateAge();
 //john.age = age;
 //console.log(john);
+//
+//var john = { // version 2
+//    name: 'John',
+//    lastName: 'Smith',
+//    yearOfBirth: 1990,
+//    job: 'teacher',
+//    isMarried: false,
+//    family: ['Jane', 'Mark', 'Bob'],
+//    calculateAge: function() {
+//        this.age = 2017 - this.yearOfBirth;
+//    }
+//};
+//
+//console.log(john); // print same result after cal, but cal is require to make age appear
+//
+//john.calculateAge(); // required to make age appear
+//console.log(john);
 
-var john = { // version 2
-    name: 'John',
-    lastName: 'Smith',
-    yearOfBirth: 1990,
-    job: 'teacher',
-    isMarried: false,
-    family: ['Jane', 'Mark', 'Bob'],
-    calculateAge: function() { // function expression
-        // it's also a method
-        return 2017 - this.yearOfBirth;
-    }
-};
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Loops
+
+
+
+
+
+
 
 
 
