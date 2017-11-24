@@ -226,33 +226,62 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Lecture: Objects
 
-var john = { // first way to define Object
+//var john = { // first way to define Object
+//    name: 'John',
+//    lastName: 'Smith',
+//    yearOfBirth: 1990,
+//    job: 'teacher',
+//    isMarried: false
+//};
+//
+//console.log(john);
+//console.log(john.lastName);
+//console.log(john['lastName']);
+//
+//var xyz = 'job';
+//console.log(john[xyz]);
+//
+//
+//john.lastName = 'Miller';
+//john['job'] = 'developer';
+//console.log(john);
+//
+//var jane = new Object(); // second way to define Object
+//jane.name = 'Jane';
+//jane.lastName = 'Smith';
+//jane['yearOfBirth'] = 1969;
+//jane['isMarried'] = true;
+//
+//console.log(jane);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Lecture: Objects and methods
+var john = {
     name: 'John',
     lastName: 'Smith',
     yearOfBirth: 1990,
     job: 'teacher',
-    isMarried: false
+    isMarried: false,
+    family: ['Jane', 'Mark', 'Bob'],
+    calculateAge: function(yearOfBirth) { // function expression
+        return 2017 - yearOfBirth;
+    }
 };
 
 console.log(john);
-console.log(john.lastName);
-console.log(john['lastName']);
-
-var xyz = 'job';
-console.log(john[xyz]);
 
 
-john.lastName = 'Miller';
-john['job'] = 'developer';
-console.log(john);
 
-var jane = new Object(); // second way to define Object
-jane.name = 'Jane';
-jane.lastName = 'Smith';
-jane['yearOfBirth'] = 1969;
-jane['isMarried'] = true;
 
-console.log(jane);
+
+
+
+
+
+
+
+
 
 
 
