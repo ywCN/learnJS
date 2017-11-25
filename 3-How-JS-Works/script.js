@@ -2,21 +2,21 @@
 // Lecture: Hoisting
 
 
-calculateAge(1965); // hoisting
-
-function calculateAge(year) {
-    console.log(2016 - year);
-}
-
-//calculateAge(1990);
-
-//retirement(1965); // not working
-
-var retirement = function(year) { // the function will not be hoisted
-    console.log(65 - (2016 - year));
-}
-
-retirement(1990);
+//calculateAge(1965); // hoisting
+//
+//function calculateAge(year) {
+//    console.log(2016 - year);
+//}
+//
+////calculateAge(1990);
+//
+////retirement(1965); // not working
+//
+//var retirement = function(year) { // the function will not be hoisted
+//    console.log(65 - (2016 - year));
+//}
+//
+//retirement(1990);
 
 /*
 In simplification, variables declarations are "moved to the top" of a function and they are initialized with undefined  value, so they will be undefined until interpreter hits the line of code where the value is assigned to the variable.
@@ -28,15 +28,17 @@ The same thing concerns function expressions. Variable declaration will be hoist
 I don't think there are any benefits from this. The good practice is rather to avoid hoisting.
 */
 
-console.log(age); // undefined
-var age = 23; // saved in global execution object context
-console.log(age);
-
-function foo() {
-    var age = 65;
-    console.log(age);
-}
-
+//console.log(age); // undefined
+//var age = 23; // saved in global execution object context
+//console.log(age);
+//
+//function foo() {
+//    console.log(age);
+//    var age = 65;
+//    console.log(age);
+//}
+//foo();
+//console.log(age);
 
 
 ///////////////////////////////////////
