@@ -48,18 +48,18 @@ I don't think there are any benefits from this. The good practice is rather to a
 // First scoping example
 
 
-var a = 'Hello!';
-first();
-
-function first() {
-    var b = 'Hi!';
-    second();
-
-    function second() {
-        var c = 'Hey!';
-        console.log(a + b + c);
-    }
-}
+//var a = 'Hello!';
+//first();
+//
+//function first() {
+//    var b = 'Hi!';
+//    second();
+//
+//    function second() {
+//        var c = 'Hey!';
+//        console.log(a + b + c);
+//    }
+//}
 
 
 
@@ -67,35 +67,63 @@ function first() {
 // Example to show the differece between execution stack and scope chain
 
 
-var a = 'Hello!';
-first();
-
-function first() {
-    var b = 'Hi!';
-    second();
-
-    function second() {
-        var c = 'Hey!';
-        third()
-    }
-}
-
-function third() {
-    var d = 'John';
-//    console.log(a + b + c + d); // b,c are not in this scope
-    console.log(a + d);
-}
+//var a = 'Hello!';
+//first();
+//
+//function first() {
+//    var b = 'Hi!';
+//    second();
+//
+//    function second() {
+//        var c = 'Hey!';
+//        third()
+//    }
+//}
+//
+//function third() {
+//    var d = 'John';
+////    console.log(a + b + c + d); // b,c are not in this scope
+//    console.log(a + d);
+//}
 
 
 
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+//console.log(this); // the Window Object
+
+//calculateAge(1986);
+//function calculateAge(year) {
+//    console.log(2017 - year);
+//    console.log(this); // the Window Object, the global
+//}
+
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function() {
+        console.log(this); // john Object
+        console.log(2017 - this.yearOfBirth);
+        
+//        function innerFunction() {
+//            console.log(this); // Window Object
+//        }
+//        innerFunction();
+    }
+};
+
+john.calculateAge();
 
 
+var mike = {
+    name: 'Mike',
+    yearOfBirth: 1984,
+    
+};
 
-
-
+mike.calculateAge = john.calculateAge;
+mike.calculateAge();
 
 
 
