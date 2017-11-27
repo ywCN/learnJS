@@ -24,7 +24,7 @@ document.querySelector('#current-' + activePlayer).textContent = dice; // used a
 
 console.log(document.querySelector('#score-0').textContent); // used as a getter
 
-/* to change the attribute of a CSS element*/
+/* to change the CSS of an element*/
 document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
 
 
