@@ -16,6 +16,7 @@ roundScore = 0;
 activePlayer = 0;
 dice = Math.floor(Math.random() * 6) + 1;
 
+/* to set or get text content of an element */
 document.querySelector('#current-' + activePlayer).textContent = dice; // used as a setter
 // id="current-0"  This is one way to change the content.
 // # for selecting ids
@@ -23,8 +24,8 @@ document.querySelector('#current-' + activePlayer).textContent = dice; // used a
 
 console.log(document.querySelector('#score-0').textContent); // used as a getter
 
-
-
+/* to change the attribute of a CSS element*/
+document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
 
 
 
