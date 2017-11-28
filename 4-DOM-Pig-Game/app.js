@@ -16,12 +16,13 @@ roundScore = 0;
 activePlayer = 0;
 //dice = Math.floor(Math.random() * 6) + 1;
 
-/* to change the CSS of an element*/
+/* to change the CSS of an element*/ // querySelector is one way to select element, there are more ways to select elements
 document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
 
-//function btn() {
-//    // do something here
-//}
+document.getElementById('score-0').textContent = '0'; // another way to select elements
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
     // 1. Random number
