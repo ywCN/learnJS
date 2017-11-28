@@ -21,8 +21,8 @@ document.querySelector('#current-' + activePlayer).textContent = dice; // used a
 // id="current-0"  This is one way to change the content.
 // # for selecting ids
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'; // do not use .textContent here, it will display the code as the content
-
-console.log(document.querySelector('#score-0').textContent); // used as a getter
+var x = document.querySelector('#score-0').textContent;
+console.log(x); // used as a getter
 
 /* to change the CSS of an element*/
 document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
