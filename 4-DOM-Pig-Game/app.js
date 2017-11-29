@@ -13,7 +13,7 @@ var scores, roundScore, activePlayer;
 
 scores = [0, 0];
 roundScore = 0;
-activePlayer = 0;
+activePlayer = 0; // can be used to access current player's score
 //dice = Math.floor(Math.random() * 6) + 1;
 
 /* to change the CSS of an element*/ // querySelector is one way to select element, there are more ways to select elements
@@ -37,25 +37,43 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         roundScore += dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     } else {
-        // next player
-        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-        roundScore = 0;
-        
-        document.getElementById('current-0').textContent = '0'; // also need to change the display
-        document.getElementById('current-1').textContent = '0';
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-//        document.querySelector('.player-0-panel').classList.remove('active');
-//        document.querySelector('.player-1-panel').classList.add('active');
-
-        document.querySelector('.dice').style.display = 'none'; // make dice disapper when it is the turn of the new player
+        nextPlayer();
     }
 }); // not btn() because the function is not call by us, it is called by another function, which is a callback function
 
 
+document.querySelector('.btn-hold').addEventListener('click', function() {
+    // add current score to global score
+    scores[activePlayer] += roundScore;
+    
+    // update the UI
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+    // check if play won the game
+    if (scores[activePlayer] >= 100) {
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+    } else {
+        // next player
+        nextPlayer();
+    }
+});
 
+function nextPlayer() {
+            // next player
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    roundScore = 0;
 
+    document.getElementById('current-0').textContent = '0'; // also need to change the display
+    document.getElementById('current-1').textContent = '0';
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+//        document.querySelector('.player-0-panel').classList.remove('active');
+//        document.querySelector('.player-1-panel').classList.add('active');
 
+        document.querySelector('.dice').style.display = 'none'; // make dice disapper when it is the turn of the new player
+}
 
 ///* to set or get text content of an element */
 //document.querySelector('#current-' + activePlayer).textContent = dice; // used as a setter
