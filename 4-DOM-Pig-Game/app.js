@@ -11,18 +11,7 @@ GAME RULES:
 
 var scores, roundScore, activePlayer;
 
-scores = [0, 0];
-roundScore = 0;
-activePlayer = 0; // can be used to access current player's score
-//dice = Math.floor(Math.random() * 6) + 1;
-
-/* to change the CSS of an element*/ // querySelector is one way to select element, there are more ways to select elements
-document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
-
-document.getElementById('score-0').textContent = '0'; // another way to select elements, faster than querySelector
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
     // 1. Random number
@@ -73,6 +62,25 @@ function nextPlayer() {
 //        document.querySelector('.player-1-panel').classList.add('active');
 
         document.querySelector('.dice').style.display = 'none'; // make dice disapper when it is the turn of the new player
+}
+
+document.querySelector('.btn-new').addEventListener('click', init); // not init(), pass the function to the event listener, if init() it will be called immediately, but we only want it to be called when the button is clicked
+
+function init() {
+    scores = [0, 0];
+    roundScore = 0;
+    activePlayer = 0; // can be used to access current player's score
+    //dice = Math.floor(Math.random() * 6) + 1;
+    
+    /* to change the CSS of an element*/ // querySelector is one way to select element, there are more ways to select elements
+    document.querySelector('.dice').style.display = 'none'; // . for selecting classes // makes dice invisible
+
+    document.getElementById('score-0').textContent = '0'; // another way to select elements, faster than querySelector
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('name-1').textContent = 'Player 1';
+    document.getElementById('name-2').textContent = 'Player 2';
 }
 
 ///* to set or get text content of an element */
