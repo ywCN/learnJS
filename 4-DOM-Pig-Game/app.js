@@ -34,7 +34,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
-    if (gamePlarying) {
+    if (gamePlaying) {
         // add current score to global score
         scores[activePlayer] += roundScore;
 
