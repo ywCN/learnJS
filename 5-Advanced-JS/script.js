@@ -18,6 +18,8 @@ Person.prototype.calculateAge = function() {
     console.log(2017 - this.yearOfBirth);
 };
 
+Person.prototype.lastName = 'Smith'; // all objects will inherit this property
+
 var john = new Person('John', 1990, 'teacher');
 var jane = new Person('Jane', 1969, 'designer');
 var mark = new Person('Mark', 1948, 'retired');
@@ -25,3 +27,5 @@ var mark = new Person('Mark', 1948, 'retired');
 john.calculateAge();
 jane.calculateAge();
 mark.calculateAge();
+
+console.log(john.lastName, jane.lastName, mark.lastName); 
