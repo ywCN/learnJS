@@ -29,3 +29,23 @@ jane.calculateAge();
 mark.calculateAge();
 
 console.log(john.lastName, jane.lastName, mark.lastName); 
+
+/*
+In console:
+
+john.__proto__ === Person.prototype
+true
+
+john.hasOwnProperty('name')
+true
+
+john.hasOwnProperty('lastName')
+false
+
+john instanceof Person
+true
+
+john instanceof Object
+true
+
+*/
