@@ -117,9 +117,22 @@ We can pass a function as an argument to another function.
 We can return a function from a function.
 */
 
+var years = [1990, 1965, 1937, 2005, 1998];
 
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
 
+function calculateAge(el) {
+    return 2017 - el;
+}
 
+var ages = arrayCalc(years, calculateAge); // no () for it is a callback function
+console.log(ages);
 
 
 
