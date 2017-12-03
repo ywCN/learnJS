@@ -213,6 +213,7 @@ game();
 // Lecture: Closures
 // An inner function has always access to the variables and  parameters of its outer function, even after the outer function has returned.
 // Unlike stack, scope chain is always intact
+/*
 function retirement(retirementAge) {
     var a = ' years left until retirement.';// still available after return because a is in scope chain
     return function(yearOfBirth) {
@@ -252,8 +253,25 @@ interviewQuestion('teacher')('John');
 interviewQuestion('designer')('Jane');
 interviewQuestion('chief')('Mark');
 
+*/
 
+///////////////////////////////////////////////////////////
+// Lecture: Bind, call amd apply
 
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+};
+
+john.presentation('formal', 'morning');
 
 
 
