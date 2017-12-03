@@ -5,7 +5,7 @@
 //    yearOfBirth: 1990,
 //    job: 'teacher'
 //};
-
+/*
 var Person = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -29,7 +29,7 @@ jane.calculateAge();
 mark.calculateAge();
 
 console.log(john.lastName, jane.lastName, mark.lastName); 
-
+*/
 /*
 In console:
 
@@ -49,3 +49,37 @@ john instanceof Object
 true
 
 */
+
+// Object.create
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
