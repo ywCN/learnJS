@@ -193,6 +193,7 @@ function game() {
 game();
 */
 
+/*
 
 (function () {
     var score = Math.random() * 10;
@@ -205,6 +206,35 @@ game();
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck); // always true
 })(5);
+*/
+
+
+///////////////////////////////////////////////////////////
+// Lecture: Closures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
