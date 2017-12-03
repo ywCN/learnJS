@@ -279,11 +279,11 @@ var emily = {
     job: 'designer'
 };
 
-john.presentation.call(emily, 'friendly', 'afternoon');
+john.presentation.call(emily, 'friendly', 'afternoon'); // borrow method
+john.presentation.apply(emily, ['friendly', 'afternoon']); // another way to borrow
 
-
-
-
+var johnFriendly = john.presentation.bind(john, 'friendly');
+johnFriendly('morning');
 
 
 
