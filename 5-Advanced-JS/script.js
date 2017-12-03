@@ -116,7 +116,7 @@ We can store functions in a variable.
 We can pass a function as an argument to another function.
 We can return a function from a function.
 */
-
+/*
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -148,6 +148,9 @@ var ages = arrayCalc(years, calculateAge); // no () for it is a callback functio
 var fullAge = arrayCalc(ages, isFullAge)
 var rates = arrayCalc(ages, maxHeartRate)
 console.log(ages, fullAge, rates);
+*/
+
+// Lecture: Functions returning functions
 
 
 
