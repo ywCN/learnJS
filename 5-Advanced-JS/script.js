@@ -284,7 +284,7 @@ john.presentation.apply(emily, ['friendly', 'afternoon']); // another way to bor
 
 var johnFriendly = john.presentation.bind(john, 'friendly');
 johnFriendly('morning');
-
+johnFriendly('night');
 
 
 
