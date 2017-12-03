@@ -184,7 +184,7 @@ interviewQuestion('teacher')('Mark'); // since it returns a function, so just ca
 */
 ///////////////////////////////////////////////////////////
 // Lecture: IIFE(Immediately Invoked Function Expressions)
-
+// for data privacy
 /*
 function game() {
     var score = Math.random() * 10;
@@ -201,7 +201,10 @@ game();
 
 
 
-
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck); // always true
+})(5);
 
 
 
