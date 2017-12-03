@@ -1,3 +1,4 @@
+///////////////////////////////////////////////////////////
 // Lecture: Function constructor
 
 //var john = {
@@ -50,6 +51,7 @@ true
 
 */
 
+///////////////////////////////////////////////////////////
 // Lecture: Object.create
 // This is not the most popular way of creating objects, but it allows use to implenment really complex inheritance structures. It allows us to specify which object should be a prototype.
 /*
@@ -72,7 +74,7 @@ var jane = Object.create(personProto,
 });
 */
 
-
+///////////////////////////////////////////////////////////
 // Lecture: Primitives vs. Objects
 /*
 //Primitives
@@ -108,6 +110,7 @@ console.log(age); // 27
 console.log(city); // San Francisco
 */
 
+///////////////////////////////////////////////////////////
 // Lecture: Passing functions as arguments
 /*
 A function is an instance of the Object type.
@@ -151,6 +154,7 @@ console.log(ages, fullAge, rates);
 */
 
 // Lecture: Functions returning functions
+/*
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -177,7 +181,9 @@ designerQuestion('John');
 // a different way
 interviewQuestion('teacher')('Mark'); // since it returns a function, so just call it like regular function()
 
-
+*/
+///////////////////////////////////////////////////////////
+// Lecture: IIFE(Immediately Invoked Function Expressions)
 
 
 
