@@ -232,9 +232,23 @@ retirementIceland(1990);
 //retirement(66)(1990);
 
 
+function interviewQuestion(job) {
+    var designerQuestion = ', can you explain what UX design is?';
+    var teacherQuestion = ', what subject do you teach?';
+    var otherQuestion = ' , what do you do?';
+    
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + designerQuestion);
+        } else if (job === 'teacher') {
+            console.log(name + teacherQuestion);
+        } else {
+            console.log('Hello ' + name + otherQuestion);
+        }
+    }
+}
 
-
-
+interviewQuestion('teacher')('John');
 
 
 
