@@ -14,7 +14,7 @@ var Person = function (name, yearOfBirth, job) {
 };
 
 // add a method in the prototype of Person, so object can still access this method even it is not in the constructor
-Person.prototype.calculateAge = function() {
+Person.prototype.c1alculateAge = function() {
     console.log(2017 - this.yearOfBirth);
 };
 
