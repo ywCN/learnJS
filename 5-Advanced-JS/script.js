@@ -377,33 +377,47 @@ var quiz;
 quiz.ask()
 */
 (function() {
-    var score = 0;
     function Question(question, answers, correctAnswer) {
         this.question = question;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
     }
 
-    Question.prototype.check = function(answer) {
+    Question.prototype.check = function(answer, callback) {
+        var sc;
         if (answer !== 'exit') {
-            if (this.answers[answer] === this.correctAnswer) {
+            if (parseInt(answer) === this.correctAnswer) {
                 console.log('correct!');
-                score++;
+                sc = callback(true);
             } else {
                 console.log('wrong!');
+                sc = callback(false);
             }
-            displayScore();
+            this.displayScore(sc);
             ask();
         }
     };
 
-    var q1 = new Question('1+1=?', ['0', '1', '2'], '2');
-    var q2 = new Question('1-1=?', ['0', '1', '2'], '0');
-    var q3 = new Question('1*1=?', ['0', '1', '2'], '1');
+    var q1 = new Question('1+1=?', ['0', '1', '2'], 2);
+    var q2 = new Question('1-1=?', ['0', '1', '2'], 0);
+    var q3 = new Question('1*1=?', ['0', '1', '2'], 1);
     var questions = [q1, q2, q3];
 
-    function displayScore() {
+    function score() { // closures part
+        var sc = 0;
+        return function(correct) {
+            if (correct) {
+                sc++;
+            }
+            return sc; // not return score
+        }
+    }
+    
+    var keepScore = score(); // score variable is always accessiable by this keepScore function
+    
+    Question.prototype.displayScore = function(score) {
         console.log('Your current score is: ' + score);
+        console.log('-----------------------------------------------------------------------------');
     };
     
     function ask() {
@@ -414,7 +428,7 @@ quiz.ask()
             console.log(i + ':' + question.answers[i]);
         }
         var answer = prompt('Please enter your answer');
-        question.check(answer);
+        question.check(answer, keepScore);
     };
     ask();
 })();
