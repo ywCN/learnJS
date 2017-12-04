@@ -340,7 +340,11 @@ Quiz.prototype.ask = function() {
         console.log(i + ':' + question.answers[i]);
     }
     var answer = prompt('Please enter the correct answer');
-    
+    if (question.answers[answer] === question.correctAnswer) {
+        console.log('correct!');
+    } else {
+        console.log('wrong!');
+    }
 };
 
 var questions = [];
