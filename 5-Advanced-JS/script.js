@@ -328,8 +328,10 @@ var Question = function (question, answers, correctAnswer) {
     this.correctAnswer = correctAnswer;
 };
 
+
 var Quiz = function (questions) {
     this.questions = questions;
+    this.score = 0;
 };
 
 Quiz.prototype.ask = function() {
@@ -340,24 +342,38 @@ Quiz.prototype.ask = function() {
         console.log(i + ':' + question.answers[i]);
     }
     var answer = prompt('Please enter the correct answer');
-    if (question.answers[answer] === question.correctAnswer) {
-        console.log('correct!');
+    this.check(question, answer);
+};
+
+Quiz.prototype.check = function(question, answer) {
+    if (answer === 'exit') {
+        
     } else {
-        console.log('wrong!');
+        if (question.answers[answer] === question.correctAnswer) {
+            console.log('correct!');
+            this.score++;
+        } else {
+            console.log('wrong!');
+        }
+        this.displayScore();
+        this.ask();
     }
 };
 
-var questions = [];
+Quiz.prototype.displayScore = function () {
+    console.log('Your current score is: ' + this.score);
+};
+
+var quiz;
 
 (function() {
-    var q1 = new Question('1+1=?', [0, 1, 2], 2);
-    var q2 = new Question('1-1=?', [0, 1, 2], 0);
-    var q3 = new Question('1*1=?', [0, 1, 2], 1);
-    questions = [q1, q2, q3];
+    var questions = [];
+    var q1 = new Question('1+1=?', ['0', '1', '2'], '2');
+    var q2 = new Question('1-1=?', ['0', '1', '2'], '0');
+    var q3 = new Question('1*1=?', ['0', '1', '2'], '1');
+    quiz = new Quiz([q1, q2, q3]);
 })();
 
-
-quiz = new Quiz(questions);
 quiz.ask()
 
 
