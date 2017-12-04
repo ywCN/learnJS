@@ -322,9 +322,81 @@ console.log(fullJapan);
 ///////////////////////////////////////////////////////////
 // CODING CHALLENGE
 
-var Question = function () {
+var Question = function (question, answers, correctAnswer) {
+    this.question = question;
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
+};
+
+var Quiz = function (questions) {
+    this.questions = questions;
+};
+
+Quiz.prototype.ask = function() {
+    var randQuestionNumber = Math.floor(Math.random() * 3);
+    var question = this.questions[randQuestionNumber];
+    console.log(question.question);
+    for (var i = 0; i < question.answers.length; i++) {
+        console.log(i + ':' + question.answers[i]);
+    }
+    var answer = prompt('Please enter the correct answer');
     
 };
+
+var questions = [];
+
+(function() {
+    var q1 = new Question('1+1=?', [0, 1, 2], 2);
+    var q2 = new Question('1-1=?', [0, 1, 2], 0);
+    var q3 = new Question('1*1=?', [0, 1, 2], 1);
+    questions = [q1, q2, q3];
+})();
+
+
+quiz = new Quiz(questions);
+quiz.ask()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
