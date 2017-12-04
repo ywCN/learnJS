@@ -321,7 +321,7 @@ console.log(fullJapan);
 
 ///////////////////////////////////////////////////////////
 // CODING CHALLENGE
-
+/*
 var Question = function (question, answers, correctAnswer) {
     this.question = question;
     this.answers = answers;
@@ -375,13 +375,52 @@ var quiz;
 })();
 
 quiz.ask()
+*/
+(function() {
+    var score = 0;
+    function Question(question, answers, correctAnswer) {
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswer = correctAnswer;
+    }
 
+    Question.prototype.ask = function () {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ':' + this.answers[i]);
+        }
+        var answer = prompt('Please enter your answer');
+        this.check(answer);
+    };
 
+    Question.prototype.check = function(answer) {
+        if (answer === 'exit') {
 
+        } else {
+            if (this.answers[answer] === this.correctAnswer) {
+                console.log('correct!');
+                score++;
+            } else {
+                console.log('wrong!');
+            }
+            this.displayScore();
+    //        this.ask();
+        }
+    };
 
+    var q1 = new Question('1+1=?', ['0', '1', '2'], '2');
+    var q2 = new Question('1-1=?', ['0', '1', '2'], '0');
+    var q3 = new Question('1*1=?', ['0', '1', '2'], '1');
+    var questions = [q1, q2, q3];
 
+    Question.prototype.displayScore = function () {
+        console.log('Your current score is: ' + score);
+    };
 
+    var randQuestionNumber = Math.floor(Math.random() * 3);
+    questions[randQuestionNumber].ask();
 
+})();
 
 
 
