@@ -35,13 +35,22 @@ var UIController = (function() {
 // GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
     
-    var DOM = UICtrl.getDOMstrings(); // get object from other controller. DO NOT forget ()
-    console.log(DOM);
+    var setUpEventlisteners = function() {
+        var DOM = UICtrl.getDOMstrings(); // get object from other controller. DO NOT forget ()
+
+        document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem); // callback
     
+        document.addEventListener('keypress', function(event) {
+            if (event.keyCode === 13 || event.which === 13) { // 'which' for older browers
+                ctrlAddItem();
+            }
+        });
+    };
+        
     var ctrlAddItem = function() {
         // 1. get the filled input data
         var input = UIController.getinput();
-        console.log(input);
+//        console.log(input);
         // 2. add the item to the budget controller
         
         // 3. add the item to the UI
@@ -49,23 +58,20 @@ var controller = (function(budgetCtrl, UICtrl) {
         // 4. calculate the budget
         
         // 5. display the budget on the UI
-    }
+    };
     
-    
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem); // callback
-    
-    document.addEventListener('keypress', function(event) {
-//        console.log(event); // we need to use the keyCode property
-        if (event.keyCode === 13 || event.which === 13) { // 'which' for older browers
-            ctrlAddItem();
+    return {
+        init: function() {
+            console.log('APP has started.');
+            setUpEventlisteners();
         }
-    });
+    }
 
 })(budgetController, UIController);
 
 
 
-
+controller.init(); // the only line outside
 
 
 
