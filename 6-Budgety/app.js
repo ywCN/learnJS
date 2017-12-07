@@ -3,20 +3,7 @@ var budgetController = (function() {
     
     
     
-    
-    
-    
-//    var x = 23; // private
-//    
-//    var add = function(a) { // private 
-//        return x + a;
-//    }
-//    
-//    return {
-//        publicTest: function(b) { // public, can be accessed by outside and can access x and add() for closures
-//            return add(b);
-//        }
-//    }
+
 })();
 
 // UI CONTROLLER
@@ -62,9 +49,6 @@ var controller = (function(budgetCtrl, UICtrl) {
         // 4. calculate the budget
         
         // 5. display the budget on the UI
-        
-        
-//        console.log('hey'); // test
     }
     
     
@@ -73,18 +57,10 @@ var controller = (function(budgetCtrl, UICtrl) {
     document.addEventListener('keypress', function(event) {
 //        console.log(event); // we need to use the keyCode property
         if (event.keyCode === 13 || event.which === 13) { // 'which' for older browers
-//            console.log('enter pressed'); // for test
             ctrlAddItem();
         }
     });
-    
-//    var z = budgetCtrl.publicTest(5);
-//    // do not use budgetController because the name can change, so pass it as param
-//    return {
-//        anotherPublic: function() {
-//            console.log(z);
-//        }
-//    }
+
 })(budgetController, UIController);
 
 
