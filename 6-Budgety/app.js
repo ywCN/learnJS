@@ -29,7 +29,8 @@ var UIController = (function() {
 
 // GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
-    document.querySelector('.add__btn').addEventListener('click', function() {
+    
+    var ctrlAddItem = function() {
         // 1. get the filled input data
         
         // 2. add the item to the budget controller
@@ -39,9 +40,21 @@ var controller = (function(budgetCtrl, UICtrl) {
         // 4. calculate the budget
         
         // 5. display the budget on the UI
+        
+        
+//        console.log('hey'); // test
+    }
+    
+    
+    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem); // callback
+    
+    document.addEventListener('keypress', function(event) {
+//        console.log(event); // we need to use the keyCode property
+        if (event.keyCode === 13 || event.which === 13) { // 'which' for older browers
+//            console.log('enter pressed'); // for test
+            ctrlAddItem();
+        }
     });
-    
-    
     
 //    var z = budgetCtrl.publicTest(5);
 //    // do not use budgetController because the name can change, so pass it as param
