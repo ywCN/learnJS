@@ -24,9 +24,11 @@ var UIController = (function() {
     
     return {
         getinput: function() {
-            var type = document.querySelector('.add__type').value; // will be 'inc' or 'exp'
-            var description = document.querySelector('.add__description').value;
-            var value = document.querySelector('.add_value').value;
+            return {
+                type: document.querySelector('.add__type').value, // will be 'inc' or 'exp'
+                description: document.querySelector('.add__description').value,
+                value: document.querySelector('.add_value').value
+            };
         }
     }
 })();
