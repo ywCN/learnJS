@@ -22,13 +22,23 @@ var budgetController = (function() {
 // UI CONTROLLER
 var UIController = (function() {
     
+    var DOMstrings = { // make maintance easier
+        inputType: '.add__type',
+        inputDescription: '.add__description',
+        inputValue: '.add__value'
+    };
+    
     return {
         getinput: function() {
             return {
-                type: document.querySelector('.add__type').value, // will be 'inc' or 'exp'
-                description: document.querySelector('.add__description').value,
-                value: document.querySelector('.add__value').value
+                type: document.querySelector(DOMstrings.inputType).value, // will be 'inc' or 'exp'
+                description: document.querySelector(DOMstrings.inputDescription).value,
+                value: document.querySelector(DOMstrings.inputValue).value
             };
+        },
+        
+        getDOMstrings: function() { // to make DOMstrings public
+            return DOMstrings;
         }
     }
 })();
@@ -36,7 +46,7 @@ var UIController = (function() {
 
 // GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
-    
+    var DOM = UICtrl.getDOMstrings; // get object from other controller
     var ctrlAddItem = function() {
         // 1. get the filled input data
         var input = UIController.getinput();
