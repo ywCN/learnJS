@@ -1,12 +1,12 @@
 var budgetController = (function() {
-    var x = 23;
+    var x = 23; // private
     
-    var add = function(a) {
+    var add = function(a) { // private 
         return x + a;
     }
     
     return {
-        publicTest: function(b) { // can access x and add() for closures
+        publicTest: function(b) { // public, can be accessed by outside and can access x and add() for closures
             return add(b);
         }
     }
