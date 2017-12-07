@@ -25,7 +25,8 @@ var UIController = (function() {
     var DOMstrings = { // make maintance easier
         inputType: '.add__type',
         inputDescription: '.add__description',
-        inputValue: '.add__value'
+        inputValue: '.add__value',
+        inputBtn: '.add__btn'
     };
     
     return {
@@ -46,7 +47,10 @@ var UIController = (function() {
 
 // GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
-    var DOM = UICtrl.getDOMstrings; // get object from other controller
+    
+    var DOM = UICtrl.getDOMstrings(); // get object from other controller. DO NOT forget ()
+    console.log(DOM);
+    
     var ctrlAddItem = function() {
         // 1. get the filled input data
         var input = UIController.getinput();
@@ -64,7 +68,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     }
     
     
-    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem); // callback
+    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem); // callback
     
     document.addEventListener('keypress', function(event) {
 //        console.log(event); // we need to use the keyCode property
