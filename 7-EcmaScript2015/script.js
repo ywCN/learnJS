@@ -106,6 +106,9 @@ console.log(`${firstName} `.repeat(3));
 
 //////////////////////////////////////////////////////////////////////
 // Lecture: Arrow Functions
+
+/*
+
 const years = [1990, 1965, 1982, 1937];
 
 // ES5
@@ -131,6 +134,11 @@ ages6 = years.map((el, index) => {
     return `Age element ${index + 1}: ${2016 - el}.`;
 })
 console.log(ages6);
+
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Arrow Functions 2
 
 
 
