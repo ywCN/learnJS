@@ -1,5 +1,5 @@
 // Lecture: let and const
-
+/*
 
 // ES5
 var name5 = 'Jane Smith';
@@ -48,6 +48,12 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(i); // 12
 
+
+*/
+
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Blocks and IIFEs
 
 
 
