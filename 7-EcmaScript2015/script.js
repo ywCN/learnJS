@@ -166,7 +166,7 @@ const box6 = {
         });
     }
 };
-//box6.clickMe();
+//box6.clickMe(); // the arrow function make the this keyword inside pointing to outside object, which is box6 in this case
 
 
 
