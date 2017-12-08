@@ -140,6 +140,9 @@ console.log(ages6);
 //////////////////////////////////////////////////////////////////////
 // Lecture: Arrow Functions 2
 
+/*
+
+
 // ES5
 var box5 = {
     color: 'green',
@@ -209,6 +212,39 @@ Person.prototype.myFriends5 = function(friends){
 }
 
 new Person('Mike').myFriends5(friends);
+
+
+*/
+
+
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Destructuring
+// this is like unpacking something
+
+// ES5
+var john = ['John', 26];
+//var name = john[0];
+//var age = john[1];
+
+// ES6
+const [name, age] = ['John', 26];
+console.log(name, age);
+
+const obj = {
+    firstName: 'John',
+    lastName: 'Smith'
+};
+
+
+const {firstName, lastName} = obj;
+console.log(firstName, lastName);
+
+const {firstName: a, lastName: b} = obj;
+console.log(a, b);
+
+
+
 
 
 
