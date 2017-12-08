@@ -222,6 +222,9 @@ new Person('Mike').myFriends5(friends);
 // Lecture: Destructuring
 // this is like unpacking something
 
+
+/*
+
 // ES5
 var john = ['John', 26];
 //var name = john[0];
@@ -254,7 +257,10 @@ function calcAgeRetirement(year) {
 const [age2, retirement] = calcAgeRetirement(1990);
 console.log(age, retirement);
 
+*/
 
+//////////////////////////////////////////////////////////////////////
+// Lecture: Arrays
 
 
 
