@@ -120,16 +120,16 @@ console.log(ages5);
 let ages6 = years.map(el => 2016 - el);
 console.log(ages6);
 
-ages6 = years.map((el, index) => `Age element ${index + 1}: ${2016 - el}.`);
 
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2016 - el}.`);
 console.log(ages6);
+
 
 ages6 = years.map((el, index) => {
     const now = new Date().getFullYear();
     const age = now - el;
     return `Age element ${index + 1}: ${2016 - el}.`;
 })
-
 console.log(ages6);
 
 
