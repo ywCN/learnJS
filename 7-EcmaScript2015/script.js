@@ -75,7 +75,7 @@ console.log(i); // 12
 //////////////////////////////////////////////////////////////////////
 // Lecture: Strings
 
-
+/*
 
 let firstName = 'John';
 let lastName = 'Smith';
@@ -100,6 +100,10 @@ console.log(n.includes('Sm'));
 console.log(firstName.repeat(3));
 console.log(`${firstName} `.repeat(3));
 
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Arrow Functions
 
 
 
