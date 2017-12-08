@@ -153,23 +153,29 @@ var UIController = (function() {
     };
     
     var formatNumber = function(num, type) {
-            var num, int, dec, sign;
-            
-            num = Math.abs(num);
-            num = num.toFixed(2); // toFixed returns a string
-            
-            numSplit = num.split('.');
-            
-            int = numSplit[0];
-            dec = numSplit[1];
-            
-            if (int.length > 3) { // will not work for number > 999999
-                int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, 3);
-            }
-            
-            sign = type === 'exp' ? '-': '+';
-            
-            return sign + ' ' + int + '.' + dec;
+        var num, int, dec, sign;
+
+        num = Math.abs(num);
+        num = num.toFixed(2); // toFixed returns a string
+
+        numSplit = num.split('.');
+
+        int = numSplit[0];
+        dec = numSplit[1];
+
+        if (int.length > 3) { // will not work for number > 999999
+            int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, 3);
+        }
+
+        sign = type === 'exp' ? '-': '+';
+
+        return sign + ' ' + int + '.' + dec;
+    };
+    
+    var nodeListForEach = function(list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
     };
     
     return {
@@ -244,12 +250,6 @@ var UIController = (function() {
             
             var fields = document.querySelectorAll(DOMstrings.expensesPercLabel);
             
-            var nodeListForEach = function(list, callback) {
-                for (var i = 0; i < list.length; i++) {
-                    callback(list[i], i);
-                }
-            };
-            
             nodeListForEach(fields, function(current, index) {
                 if (percentages[index] > 0) {
                     current.textContent = percentages[index] + '%';
@@ -273,6 +273,20 @@ var UIController = (function() {
             document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' + year;
         },
         
+        changeType: function() {
+            
+            var fields = document.querySelectorAll(
+                DOMstrings.inputType + ',' + 
+                DOMstrings.inputDescription + ',' +
+                DOMstrings.inputValue);
+            
+            nodeListForEach(fields, function(cur) {
+                cur.classList.toggle('red-focus');
+            });
+            
+            document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
+        },
+        
         getDOMstrings: function() { // to make DOMstrings public
             return DOMstrings;
         }
@@ -293,7 +307,10 @@ var controller = (function(budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
+        
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+        
+        document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
     };
     
     var updateBudget = function() {
