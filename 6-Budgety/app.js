@@ -261,10 +261,16 @@ var UIController = (function() {
         },
         
         displayMonth: function() {
-            var now, year;
+            var now, year, month;
             
             now = new Date();
-            year = now.getFullYear;
+            
+            year = now.getFullYear();
+            
+            months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            month = now.getMonth();
+            
+            document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' + year;
         },
         
         getDOMstrings: function() { // to make DOMstrings public
@@ -365,6 +371,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     return {
         init: function() {
             console.log('APP has started.');
+            UICtrl.displayMonth();
             UICtrl.displayBudget({
                 budget: 0,
                 totalInc: 0,
