@@ -57,6 +57,9 @@ console.log(i); // 12
 
 
 // ES5
+/*
+
+
 (function() {
     var c = 3;
 })();
@@ -67,12 +70,14 @@ console.log(i); // 12
     let b = 3;
 }
 
-
+*/
 
 //////////////////////////////////////////////////////////////////////
 // Lecture: Strings
 
-let firstName = 'john';
+
+
+let firstName = 'John';
 let lastName = 'Smith';
 const yearOfBirth = 1990;
 function calcAge(year) {
@@ -87,9 +92,13 @@ console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. To
 
 
 
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('Jo'));
+console.log(n.endsWith('th'));
+console.log(n.includes('Sm'));
 
-
-
+console.log(firstName.repeat(3));
+console.log(`${firstName} `.repeat(3));
 
 
 
