@@ -332,6 +332,10 @@ console.log(ages.find(cur => cur >= 18));// find 1st element >= 18
 // Lecture: Spread Operator
  
 
+
+/*
+
+
 function addFourAges(a, b, c, d) {
     return a + b + c + d;
 }
@@ -365,6 +369,11 @@ const all = [h, ...boxes];
 Array.from(all).forEach(cur => cur.style.color = 'purple');
 
 
+
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Rest parameters
 
 
 
