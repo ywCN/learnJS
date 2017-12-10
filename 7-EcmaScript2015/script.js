@@ -454,14 +454,30 @@ var john = new SmithPerson('John', 1989);
 //////////////////////////////////////////////////////////////////////
 // Lecture: Maps
 
+const question = new Map();
+question.set('question', 'What is correct?');
+question.set(1, 2);
+question.set(2, 3);
+question.set(3, 4);
+question.set(4, 5);
+question.set('correct', 3);
+question.set(true, 'Correct');
+question.set(false, 'Wrong');
 
+console.log(question.get('question'));
+//console.log(question.size);
+//console.log(question.has(4));
 
+//question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}.`));
 
+for (let [key, value] of question.entries()) {
+    if (typeof(key) === 'number') {
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
 
-
-
-
-
+const ans = parseInt(prompt('Write the correct answer'));
+console.log(question.get(ans === question.get('correct')));
 
 
 
