@@ -400,6 +400,8 @@ isFullAge6(1990, 1999, 1965);
 
 */
 
+/*
+
 // pass a limit in instead of 18
 // ES5
 function isFullAge5(limit) {
@@ -418,6 +420,42 @@ function isFullAge6(limit, ...years) {
 }
 
 isFullAge6(21, 1990, 1999, 1965);
+
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Default Parameters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
