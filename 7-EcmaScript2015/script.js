@@ -374,11 +374,27 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 
 //////////////////////////////////////////////////////////////////////
 // Lecture: Rest parameters
+// transform things into array
 
 
+// ES5
+function isFullAge5() {
+//    console.log(arguments); // arguments is not an array
+    var argsArr = Array.prototype.slice.call(arguments); // convert to array
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) > 18);
+    });
+};
 
+isFullAge5(1990, 1999, 1965);
 
+// ES6
+function isFullAge6(...years) {
+//    console.log(arguments); // is array
+    years.forEach(cur => console.log((2016 - cur) > 18));
+}
 
+isFullAge6(1990, 1999, 1965);
 
 
 
