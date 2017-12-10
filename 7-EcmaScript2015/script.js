@@ -440,6 +440,7 @@ function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
 */
 
 //ES6
+/*
 function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {    
     this.firstName = firstName;
     this.lastName = lastName;
@@ -448,8 +449,10 @@ function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = '
 }
 
 var john = new SmithPerson('John', 1989);
+*/
 
-
+//////////////////////////////////////////////////////////////////////
+// Lecture: Maps
 
 
 
