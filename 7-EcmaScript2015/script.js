@@ -377,6 +377,8 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 // transform things into array
 
 
+
+/*
 // ES5
 function isFullAge5() {
 //    console.log(arguments); // arguments is not an array
@@ -396,10 +398,26 @@ function isFullAge6(...years) {
 
 isFullAge6(1990, 1999, 1965);
 
+*/
+
+// pass a limit in instead of 18
+// ES5
+function isFullAge5(limit) {
+    var argsArr = Array.prototype.slice.call(arguments, 1); // exclude first element
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) > limit);
+    });
+};
+
+isFullAge5(21, 1990, 1999, 1965);
 
 
+// ES6
+function isFullAge6(limit, ...years) {
+    years.forEach(cur => console.log((2016 - cur) > limit));
+}
 
-
+isFullAge6(21, 1990, 1999, 1965);
 
 
 
