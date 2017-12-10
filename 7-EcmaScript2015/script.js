@@ -532,6 +532,8 @@ Person6.greeting(); // static method
 //////////////////////////////////////////////////////////////////////
 // Lecture: Classes and Subclasses
 
+/*
+
 // ES5
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -594,6 +596,32 @@ class Athlete6 extends Person6 {
 const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 10);
 johnAthlete6.wonMedal();
 johnAthlete6.calculateAge();
+
+
+*/
+
+
+//////////////////////////////////////////////////////////////////////
+// CODING CHALLENGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
