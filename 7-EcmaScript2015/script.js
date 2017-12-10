@@ -454,6 +454,8 @@ var john = new SmithPerson('John', 1989);
 //////////////////////////////////////////////////////////////////////
 // Lecture: Maps
 
+/*
+
 const question = new Map();
 question.set('question', 'What is correct?');
 question.set(1, 2);
@@ -479,7 +481,10 @@ for (let [key, value] of question.entries()) {
 const ans = parseInt(prompt('Write the correct answer'));
 console.log(question.get(ans === question.get('correct')));
 
+*/
 
+//////////////////////////////////////////////////////////////////////
+// Lecture: 
 
 
 
