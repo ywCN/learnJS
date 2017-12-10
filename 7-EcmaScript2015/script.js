@@ -486,6 +486,9 @@ console.log(question.get(ans === question.get('correct')));
 //////////////////////////////////////////////////////////////////////
 // Lecture: Classes
 
+/*
+
+
 // ES5
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -494,7 +497,7 @@ var Person5 = function(name, yearOfBirth, job) {
 };
 
 Person5.prototype.calculateAge = function() {
-    var age = new Date().getFullYear - this.yearOfBirth;
+    var age = new Date().getFullYear() - this.yearOfBirth;
     console.log(age);
 };
 
@@ -511,7 +514,7 @@ class Person6 { // not hoisted
     }
     
     calculateAge() {
-        var age = new Date().getFullYear - this.yearOfBirth;
+        var age = new Date().getFullYear() - this.yearOfBirth;
         console.log(age);
     }
     
@@ -524,20 +527,73 @@ const john6 = new Person6('John', 1990, 'teacher');
 
 Person6.greeting(); // static method
 
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Classes and Subclasses
+
+// ES5
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+};
+
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+};
+
+var Athlete5 = function(name, yearOfBirth, job, olymicGames, medals) {
+    Person5.call(this, name, yearOfBirth, job);
+    this.olymicGames = olymicGames;
+    this.medals = medals;
+};
+
+Athlete5.prototype = Object.create(Person5.prototype); // connect 2 constructor
+
+Athlete5.prototype.wonMedal = function() {
+    this.medals++;
+    console.log(this.medals);
+};
+
+var johnAthelete5 = new Athlete5('John', 1990, 'swimmer', 3, 10);
+
+johnAthelete5.calculateAge();
 
 
 
+// ES 6
+// will make a same prototype chain
+class Person6 { // not hoisted
+    constructor(name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+    
+    calculateAge() {
+        var age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+}
 
+class Athlete6 extends Person6 {
+    constructor(name, yearOfBirth, job, olympicGames, medals) {
+        super(name, yearOfBirth, job);
+        this.olympicGames = olympicGames;
+        this.medals = medals;
+    }
+    
+    wonMedal() {
+        this.medals++;
+        console.log(this.medals);
+    }
+}
 
-
-
-
-
-
-
-
-
-
+const johnAthlete6 = new Athlete6('John', 1990, 'swimmer', 3, 10);
+johnAthlete6.wonMedal();
+johnAthlete6.calculateAge();
 
 
 
