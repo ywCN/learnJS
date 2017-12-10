@@ -262,10 +262,18 @@ console.log(age, retirement);
 //////////////////////////////////////////////////////////////////////
 // Lecture: Arrays
 
+const boxes = document.querySelectorAll('.box'); // returns a list
+
+// ES5
+//var boxesArr5 = Array.prototype.slice.call(boxes); // convert list to array
+//boxesArr5.forEach(function(cur) {
+//    cur.style.backgroundColor = 'dodgerblue';
+//});
 
 
-
-
+// ES6
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
 
 
 
