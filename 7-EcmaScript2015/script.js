@@ -265,15 +265,62 @@ console.log(age, retirement);
 const boxes = document.querySelectorAll('.box'); // returns a list
 
 // ES5
-//var boxesArr5 = Array.prototype.slice.call(boxes); // convert list to array
-//boxesArr5.forEach(function(cur) {
-//    cur.style.backgroundColor = 'dodgerblue';
-//});
+var boxesArr5 = Array.prototype.slice.call(boxes); // convert list to array
+boxesArr5.forEach(function(cur) {
+    cur.style.backgroundColor = 'dodgerblue';
+});
 
 
 // ES6
 const boxesArr6 = Array.from(boxes);
 boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+
+
+
+
+// for loop
+
+// ES5
+//for (var i = 0; i < boxesArr5.length; i++) {
+//    if (boxesArr5[i].className === 'box blue') {
+//        continue;
+//        // break;
+//    }
+//    boxesArr5[i].textContent = 'I am blue now!';
+//}
+
+
+// ES6
+for (const cur of boxesArr6) {
+//    if (cur.className === 'box blue') {
+//        continue;
+//    }
+    if (cur.className.includes('blue')) {
+        continue;
+    }
+    cur.textContent = 'I am blue now.';
+}
+
+
+
+
+
+
+// get element in Array
+
+// ES5
+var ages = [12, 17, 8, 21, 14, 12];
+var full = ages.map(function(cur) {
+    return cur >= 18;
+});
+console.log(full);
+
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)]);
+
+// ES6
+console.log(ages.findIndex(cur => cur >= 18)); // find location of 1st element >= 18
+console.log(ages.find(cur => cur >= 18));// find 1st element >= 18
 
 
 
