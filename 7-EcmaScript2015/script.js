@@ -262,6 +262,9 @@ console.log(age, retirement);
 //////////////////////////////////////////////////////////////////////
 // Lecture: Arrays
 
+
+/*
+
 const boxes = document.querySelectorAll('.box'); // returns a list
 
 // ES5
@@ -321,6 +324,23 @@ console.log(ages[full.indexOf(true)]);
 // ES6
 console.log(ages.findIndex(cur => cur >= 18)); // find location of 1st element >= 18
 console.log(ages.find(cur => cur >= 18));// find 1st element >= 18
+
+
+*/
+
+//////////////////////////////////////////////////////////////////////
+// Lecture: Spread Operator
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
